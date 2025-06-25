@@ -15,10 +15,11 @@ const Header = () => {
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
+          <a href="#home" className="text-gray-600 hover:text-zyprova-primary transition-colors">Home</a>
           <a href="#features" className="text-gray-600 hover:text-zyprova-primary transition-colors">Features</a>
           <a href="#use-cases" className="text-gray-600 hover:text-zyprova-primary transition-colors">Use Cases</a>
           <a href="#integrations" className="text-gray-600 hover:text-zyprova-primary transition-colors">Integrations</a>
-          <a href="#testimonials" className="text-gray-600 hover:text-zyprova-primary transition-colors">Testimonials</a>
+          <a href="/about" className="text-gray-600 hover:text-zyprova-primary transition-colors">About Us</a>
         </nav>
 
         <div className="hidden md:flex items-center space-x-4">
@@ -26,7 +27,7 @@ const Header = () => {
             Sign In
           </Button>
           <Button className="bg-gradient-purple hover:opacity-90 text-white">
-            Start Free Trial
+            Join Waitlist
           </Button>
         </div>
 
@@ -42,13 +43,14 @@ const Header = () => {
         {isMenuOpen && (
           <div className="absolute top-full left-0 w-full bg-white border-b shadow-lg md:hidden">
             <nav className="flex flex-col p-4 space-y-4">
+              <a href="#home" className="text-gray-600 hover:text-zyprova-primary">Home</a>
               <a href="#features" className="text-gray-600 hover:text-zyprova-primary">Features</a>
               <a href="#use-cases" className="text-gray-600 hover:text-zyprova-primary">Use Cases</a>
               <a href="#integrations" className="text-gray-600 hover:text-zyprova-primary">Integrations</a>
-              <a href="#testimonials" className="text-gray-600 hover:text-zyprova-primary">Testimonials</a>
+              <a href="/about" className="text-gray-600 hover:text-zyprova-primary">About Us</a>
               <div className="flex flex-col space-y-2 pt-4 border-t">
                 <Button variant="ghost">Sign In</Button>
-                <Button className="bg-gradient-purple text-white">Start Free Trial</Button>
+                <Button className="bg-gradient-purple text-white">Join Waitlist</Button>
               </div>
             </nav>
           </div>
