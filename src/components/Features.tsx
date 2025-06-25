@@ -1,6 +1,6 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Brain, TrendingUp, Sync, Users, Building2, Globe, BarChart3 } from "lucide-react";
+import { Brain, TrendingUp, RefreshCw, Users, Building2, Globe, BarChart3 } from "lucide-react";
 import { useState } from "react";
 
 const Features = () => {
@@ -20,7 +20,7 @@ const Features = () => {
       fullDescription: "Model how changes in headcount, revenue, or capital affect your runway and growth trajectory in seconds."
     },
     {
-      icon: <Sync className="h-12 w-12 text-zyprova-primary" />,
+      icon: <RefreshCw className="h-12 w-12 text-zyprova-primary" />,
       title: "Auto-Sync with Core Systems",
       shortDescription: "Integrate seamlessly with your HRIS, accounting, and equity platforms.",
       fullDescription: "Zyprova automatically syncs with your key systems to ensure that every model is accurate, live, and up-to-date."
