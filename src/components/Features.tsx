@@ -1,6 +1,6 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Brain, TrendingUp, RefreshCw, Users, Building2, Globe, BarChart3 } from "lucide-react";
+import { Brain, TrendingUp, RefreshCw, Users, Building2, Globe, BarChart3, X, Check } from "lucide-react";
 import { useState } from "react";
 
 const Features = () => {
@@ -51,6 +51,23 @@ const Features = () => {
     }
   ];
 
+  const comparison = {
+    traditional: [
+      "Rigid spreadsheets that break easily",
+      "Disconnected systems across teams",
+      "Requires teams of analysts",
+      "Single-vertical solutions",
+      "Complex formulas and manual work"
+    ],
+    zyprova: [
+      "Intuitive AI conversations",
+      "Unified platform across Finance, HR, and Equity",
+      "Empowers any executive instantly",
+      "Cross-functional collaboration",
+      "Natural language planning"
+    ]
+  };
+
   return (
     <section id="features" className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -63,7 +80,64 @@ const Features = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        {/* Traditional vs Zyprova Comparison */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+              Why Teams Choose <span className="text-zyprova-primary">Zyprova</span>
+            </h3>
+            <p className="text-lg text-gray-600">
+              Transform planning from a painful process into an intuitive conversation
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Traditional Tools */}
+            <Card className="border-2 border-red-100 bg-red-50/50">
+              <CardContent className="p-8">
+                <div className="text-center mb-6">
+                  <X className="h-12 w-12 text-red-500 mx-auto mb-3" />
+                  <h4 className="text-xl font-bold text-gray-900">Traditional Planning Tools</h4>
+                </div>
+                <ul className="space-y-3">
+                  {comparison.traditional.map((item, index) => (
+                    <li key={index} className="flex items-start">
+                      <X className="h-5 w-5 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Zyprova */}
+            <Card className="border-2 border-zyprova-primary/20 bg-gradient-purple-light">
+              <CardContent className="p-8">
+                <div className="text-center mb-6">
+                  <Check className="h-12 w-12 text-zyprova-primary mx-auto mb-3" />
+                  <h4 className="text-xl font-bold text-gray-900">Zyprova</h4>
+                </div>
+                <ul className="space-y-3">
+                  {comparison.zyprova.map((item, index) => (
+                    <li key={index} className="flex items-start">
+                      <Check className="h-5 w-5 text-zyprova-primary mr-3 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center mt-8">
+            <p className="text-lg text-gray-600 italic">
+              "Planning becomes as easy as asking the right questions."
+            </p>
+          </div>
+        </div>
+
+        {/* Features Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <Card 
               key={index} 
@@ -94,15 +168,6 @@ const Features = () => {
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        <div className="text-center">
-          <p className="text-lg text-gray-600 mb-6">
-            Traditional planning tools trap you in rigid spreadsheets and disconnected systems. Zyprova transforms planning into an intuitive AI conversation across Finance, HR, and Equity—all in one platform.
-          </p>
-          <p className="text-gray-600">
-            While traditional solutions require teams of analysts for single-vertical solutions, Zyprova empowers any executive to create and analyze plans instantly through natural language. Planning becomes as easy as asking the right questions.
-          </p>
         </div>
       </div>
     </section>
